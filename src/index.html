@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Custom Mapillary Leaderboards</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<header class="container">
+			<div>
+				<h1>Custom Mapillary Leaderboards</h1>
+				<p>Custom Mapillary leaderboards for your event or your grand master plan(s)...</p>
+			</div>
+		</header>
+		<main  class="container">
+			<div id="userInput">
+				<label>Search for participants:<br>
+					<input type="text" id="userSearch" />
+				</label>
+				<ul id="usersResult"></ul>
+			</div>
+
+			<div>
+				<div id="userLabels"></div>
+			</div>
+
+			<button id="enableTime">Add time frame</button>
+			<div id="time" style="display:none">
+				<div>
+					<h2>Start date</h2>
+					<input type="text" id="startDate" />
+				</div>
+				<div>
+					<h2>End date</h2>
+					<input type="text" id="endDate" />
+				</div>
+			</div>
+			<div>
+				<a id="goToBoard" disabled="true" data-tooltip="Add some participants first" href="#">Create Leaderboard</a>
+			</div>
+		</main>
+		<footer class="container">
+			<p>A <a href="#">open source</a> weekend hack by <a href="#">Albin Larsson</a>.</p>
+		</footer>
+		<link rel="stylesheet" href="https://unpkg.com/flatpickr@2.6.1/dist/flatpickr.min.css" />
+		<script src="https://unpkg.com/flatpickr@2.6.1/dist/flatpickr.min.js"></script>
+		<script src="js/helpers.js"></script>
+		<script src="js/index-ui.js"></script>
+	</body>
+</html>

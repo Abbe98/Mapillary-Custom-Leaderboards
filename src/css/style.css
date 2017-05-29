@@ -1,0 +1,203 @@
+/*
+ * I have a rule, everyone who cleans up my CSS gets a ice cream if we run into each other.
+ */
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+  color: #333;
+}
+
+input {
+  padding: 8px;
+  display: block;
+  border: 1px solid #36AF6D;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 105%;
+  border-radius: 4px;
+}
+
+.container {
+  max-width: 750px;
+  margin: auto;
+}
+
+a {
+  color: #36AF6D;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr {
+  padding-bottom: 2px;
+  padding-top: 2px;
+  border-top: 2px solid #FFF;
+}
+
+canvas {
+  margin-top: 5px;
+}
+
+#userInput,
+#time {
+  max-width: 400px;
+  margin: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#userInput ul {
+  padding-left: 0px;
+  width: 100%;
+  margin: 0;
+  list-style: none;
+}
+
+#userInput ul li {
+  padding: 3px;
+  border-bottom: 1px dotted #36AF6D;
+}
+
+#userInput ul li:hover {
+  cursor: pointer;
+  background: #36AF6D;
+  border-radius: 4px;
+}
+
+#enableTime {
+  margin: auto;
+  background: none;
+  border: 1px solid #36AF6D;
+  padding: 7px;
+  border-radius: 4px;
+  color: #36AF6D;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#enableTime:hover {
+  cursor: pointer;
+  background: #36AF6D;
+  color: #FFF;
+}
+
+#userLabels {
+  margin: 4px;
+}
+
+#userLabels span {
+  padding: 7px;
+  padding-top: 2px;
+  line-height: 1.5;
+  padding-bottom: 4px;
+  background: #36AF6D;
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  margin-left: 3px;
+  margin-top: 3px;
+}
+
+#userLabels span span {
+  margin-left: 3px;
+  font-size: 50%;
+  line-height: 15px;
+  background: #278853;
+  padding: 2px;
+  border-radius: 100%;
+  min-height: 18px;
+  min-width: 18px;
+  box-sizing: border-box;
+  display: block;
+  float: right;
+}
+
+#userLabels span span:hover {
+  cursor: pointer;
+}
+
+#time {
+  display: inline-block;
+}
+
+#goToBoard {
+  margin: auto;
+  background: none;
+  border: 1px solid #36AF6D;
+  padding: 7px;
+  border-radius: 4px;
+  color: #36AF6D;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+#goToBoard[disabled=true]{
+  cursor: not-allowed;
+  color: rgba(54, 175, 109, 0.5);
+  border-color: rgba(54, 175, 109, 0.5);
+}
+
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]:before,
+[data-tooltip]:after {
+  opacity: 0;
+  bottom: 100%;
+  left: 50%;
+  position: absolute;
+  z-index: 10;
+  transform: translate(-50%, 10px);
+  transform-origin: top;
+}
+
+[data-tooltip]:after {
+  background: #000;
+  border-radius: 4px;
+  color: #fff;
+  content: attr(data-tooltip);
+  font-size: 12px;
+  padding: .5em 1em;
+  margin-bottom: 11px;
+  white-space: pre;
+}
+
+[data-tooltip]:before {
+  background: #000;
+  height: 6px;
+  width: 6px;
+  content: "";
+  margin-bottom: -3px;
+}
+
+[data-tooltip]:hover:before,
+[data-tooltip][data-tooltip-visible]:before,
+[data-tooltip]:hover:after,
+[data-tooltip][data-tooltip-visible]:after {
+  opacity: 1;
+}
+
+[data-tooltip]:before,
+[data-tooltip][data-tooltip-visible]:before {
+  transform: rotate(45deg);
+}
