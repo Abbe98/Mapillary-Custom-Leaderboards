@@ -8,6 +8,15 @@ window.onload = function() {
 
   var start = getUrlParameter('start');
   var end = getUrlParameter('end');
+  if (start && end) {
+    var disStart = new Date(start);
+    var disEnd = new Date(end);
+    document.getElementById('start-date').innerText = disStart.toDateString();
+    document.getElementById('end-date').innerText = disEnd.toDateString();
+  } else {
+    var element = document.getElementById('date');
+    element.parentNode.removeChild(element);
+  }
 
   var colors = ['#0F9D58', '#F4B400', '#4285F4', '#DB4437'];
   var usersData = [];
