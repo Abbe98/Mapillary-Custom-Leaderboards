@@ -78,7 +78,11 @@ var mapillary = {
       if (xhr.readyState == 4) {
         var response = JSON.parse(xhr.responseText);
         if (typeof callback == 'function') {
-          callback.apply(null, [response]);
+          if (response.length) {
+            callback.apply(null, [response]);
+          } else {
+            callback.apply(null, ['No data for this board yet.']);
+          }
         }
       } else {
         return false;

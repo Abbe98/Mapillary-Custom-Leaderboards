@@ -14,6 +14,15 @@ window.onload = function() {
   var totalPhotos = 0;
 
   mapillary.getBoardData(users, (result) => {
+    if (typeof result == 'string') {
+      document.getElementById('loader').style.display = 'none';
+      var error = document.createElement('p');
+      var errorText = document.createTextNode(result);
+      error.appendChild(errorText);
+      document.getElementsByClassName('container')[0].appendChild(error);
+      return;
+    }
+
     result.forEach((user, i) => {
       // use i to map users against the colors
       if (i > 3) {
