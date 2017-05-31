@@ -10,6 +10,24 @@ function getUrlParameter(parameter) {
   return false;
 }
 
+function createTinyUrl(url, callback) {
+    var xhr = new XMLHttpRequest();
+    // use YQL to get around TinyUrl CORS limitations
+    xhr.open('GET', 'http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22' + encodeURIComponent('https://tinyurl.com/api-create.php?url=' + url) + '%22&format=json', true);
+
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState == 4) {
+        if (typeof callback == 'function') {
+          var response = JSON.parse(xhr.responseText)
+          callback.apply(null, [response.query.results.body]);
+        }
+      } else {
+        return false;
+      }
+    }
+    xhr.send();
+}
+
 Array.prototype.remove = function(item) {
   var index = this.indexOf(item);
 

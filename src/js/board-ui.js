@@ -18,6 +18,10 @@ window.onload = function() {
     element.parentNode.removeChild(element);
   }
 
+  createTinyUrl(document.location.href, (url) => {
+    document.getElementById('share').value = url;
+  });
+
   var colors = ['#0F9D58', '#F4B400', '#4285F4', '#DB4437'];
   var usersData = [];
   var totalPhotos = 0;
