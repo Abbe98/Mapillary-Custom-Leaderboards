@@ -1,9 +1,9 @@
 function dataChanged() {
   var target = document.getElementById('goToBoard');
-  if (users.length == 0) {
+  if (users.length < 2) {
     target.setAttribute('disabled', 'true');
     target.href = '#';
-    target.setAttribute('data-tooltip', 'Add some participants first');
+    target.setAttribute('data-tooltip', 'Two participants are required');
     return;
   } else {
     target.setAttribute('disabled', 'false');
