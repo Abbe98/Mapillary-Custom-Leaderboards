@@ -31,6 +31,8 @@ window.onload = function() {
 
     renderTable(usersData);
     renderChart(usersData, totalPhotos);
+
+    document.getElementById('loader').style.display = 'none';
   }, start, end);
 };
 
